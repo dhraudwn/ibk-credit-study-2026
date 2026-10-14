@@ -21,6 +21,7 @@ jobs:
       - name: Unpack study app
         run: |
           cat study-site.tar.gz.part* > "$RUNNER_TEMP/study-site.tar.gz"
+          echo "a3c9d32882c56d5dfded3e65f77152557651b1d73e6451b1e7fe7fe8426a7ff8  $RUNNER_TEMP/study-site.tar.gz" | sha256sum --check
           tar -xzf "$RUNNER_TEMP/study-site.tar.gz"
       - uses: actions/setup-node@v4
         with:
